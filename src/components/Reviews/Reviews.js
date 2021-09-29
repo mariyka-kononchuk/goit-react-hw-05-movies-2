@@ -53,5 +53,5 @@ export default function Reviews() {
 }
 
 Reviews.propTypes = {
-    movieId: PropTypes.number.isRequired,
+    movieId: PropTypes.number,
 };

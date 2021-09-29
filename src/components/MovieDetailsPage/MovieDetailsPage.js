@@ -143,5 +143,5 @@ export default function MovieDetailsPage() {
 }
 
 MovieDetailsPage.propTypes = {
-    movieId: PropTypes.number.isRequired,
+    movieId: PropTypes.number,
 };
