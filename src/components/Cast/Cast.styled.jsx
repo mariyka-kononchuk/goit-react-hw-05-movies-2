@@ -13,15 +13,16 @@ import styled from '@emotion/styled'
     list-style: none;  
   `
 export const Image = styled.img`
-padding:10px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-      1px 4px 6px rgba(0, 0, 0, 0.16);
-    outline: none;
-     margin-bottom:6px;
+  padding:10px;
+  margin-bottom:6px;
    
   width: 100%;
   height: 260px;
   object-fit: contain;
+
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.12), 2px 2px 2px 2px rgba(0, 0, 0, 0.06),
+      2px 4px 6px rgba(0, 0, 0, 0.16);
+    outline: none;
   `
   export const Name = styled.p`
     margin-bottom: 5px;
