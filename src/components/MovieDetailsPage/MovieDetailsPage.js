@@ -88,7 +88,7 @@ export default function MovieDetailsPage() {
     }
 
     if (status === 'rejected') {
-        return (<div>Error</div>)
+        return (<div>Oops, there are no movie info</div>)
     }
     
     if (status === 'resolved') {
