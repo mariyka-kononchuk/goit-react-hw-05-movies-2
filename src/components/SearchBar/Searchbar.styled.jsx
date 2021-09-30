@@ -10,6 +10,7 @@ export const Header = styled.header`
     width: 400px;
     align-items: center;
     min-height: 44px;
+    margin-top:10px;
     padding-right: 24px;
     padding-left: 24px;
     padding-top: 12px;

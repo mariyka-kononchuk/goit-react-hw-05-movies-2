@@ -27,7 +27,7 @@ export const OverviewTitle = styled.h2`
     color: #b86b82; 
   `
 export const Overview = styled.h2`
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     width: 600px;
 
     font-weight: 600;
@@ -88,10 +88,8 @@ export const InfoTitle = styled.h3`
     color: #b86b82; 
   `
 export const StyledLink = styled(Link)`
-/* padding: 5px; */
-/* display:flex; */
-margin-bottom: 10px;
-margin-right: 20px;
+  margin-bottom: 15px;
+  margin-right: 20px;
     padding: 4px 8px;
     border-radius: 2px;
     background-color: #b86b82;
@@ -114,7 +112,8 @@ margin-right: 20px;
     width: 80px;
     box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
     0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-      &:hover, focus {
+
+      &:hover, :focus {
         background-color: #a5a1a4;
       }
   `

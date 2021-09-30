@@ -6,12 +6,12 @@ const Navigation = () => (
         <StyledNavLink
             exact
             to="/"
-            className="s.link"
-            activeClassName="s.activeLink">Home</StyledNavLink>
+            
+            activeClassName="activeLink">Home</StyledNavLink>
         <StyledNavLink
             to="/movies"
-            className="s.link"
-            activeClassName="s.activeLink">Movies</StyledNavLink>
+           
+            activeClassName="activeLink">Movies</StyledNavLink>
     </StyledNav>
 )
 

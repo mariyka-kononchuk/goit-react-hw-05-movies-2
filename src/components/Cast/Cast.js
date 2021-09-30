@@ -38,7 +38,9 @@ export default function Cast() {
                 <List>
                     {actors.map(actor => (
                         <li key={actor.cast_id}>
-                            <Image src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`} alt={actor.name}/>
+                            {actor.profile_path ?
+                            <Image src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`} alt={actor.name} /> :
+                            <Image src="https://i.ibb.co/s9cXZV0/poster.jpg" alt={actor.name} />}
                             <Name>{actor.name}</Name>
                             <Character><CharacterStyle>Character:</CharacterStyle> {actor.character}</Character>
                         </li>

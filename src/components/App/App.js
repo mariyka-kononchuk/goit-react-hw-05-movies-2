@@ -1,5 +1,4 @@
-import React from 'react';
-import {lazy, Suspense} from 'react';
+import React, {lazy, Suspense} from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Navigation from '../Navigation';
 import Container from '../Container';
@@ -18,6 +17,7 @@ export default function App() {
     return (
         <Container>
             <Navigation />
+            
             <Suspense fallback={<div>Loading...</div>}>
                 <Switch>
                     

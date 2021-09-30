@@ -24,7 +24,7 @@ export const Author = styled.p`
   `
 
   export const Content = styled.p`
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 
     font-weight: 600;
     font-size: 16px;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import {
     useParams,
     useRouteMatch,
@@ -11,8 +11,8 @@ import { Toaster } from 'react-hot-toast';
 import PropTypes from 'prop-types';
 
 import { fetchMovieDetails } from '../../services/movies-api'
-import Cast from '../Cast';
-import Reviews from '../Reviews';
+// import Cast from '../Cast';
+// import Reviews from '../Reviews';
 
 import {
     GoBackButton,
@@ -28,7 +28,10 @@ import {
     InfoWrapper,
     InfoTitle,
     StyledLink
-} from './MovieDetailsPage.styled.jsx'
+} from './MovieDetailsPage.styled.jsx';
+
+const Cast = lazy(() => import('../Cast/Cast.js' /*webpackChunkName: "cast" */));
+const Reviews = lazy(() => import('../Reviews/Reviews.js' /*webpackChunkName: "reviews" */));
 
 export default function MovieDetailsPage() {
     const { url, path } = useRouteMatch();
@@ -118,17 +121,20 @@ export default function MovieDetailsPage() {
                 <InfoWrapper>
                     <InfoTitle>Additional information</InfoTitle>
 
-                    <StyledLink to={{  ...location,
+                    <StyledLink to={{
+                            ...location,
                                 pathname: `${url}/cast`
                                 
                                 }}>
                                     Cast</StyledLink>
-                    <StyledLink to={{  ...location,
+                    <StyledLink to={{
+                            ...location,
                                 pathname: `${url}/reviews`
                                 
                                 }}>Reviews</StyledLink>
                 </InfoWrapper>
-                     
+
+                <Suspense fallback={<div>Loading...</div>}>
                 <Route path={`${path}/cast`} exact>
                     <Cast />
                 </Route>
@@ -136,7 +142,7 @@ export default function MovieDetailsPage() {
                 <Route path={`${path}/reviews`} >
                     <Reviews />
                 </Route>
-                <Toaster />
+                </Suspense>
             </div>
         )
     }
