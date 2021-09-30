@@ -10,7 +10,6 @@ export default function HomePage() {
         localStorage.setItem('query', '');
         fetchPopularMovies()
             .then((data) => {
-                console.log("movies", data)
                 setMovies(data.results);
             })
             .catch(error => {
