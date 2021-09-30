@@ -54,11 +54,21 @@ export const Genres = styled.ul`
     font-weight: 600;
     font-size: 16px;
     line-height: 1.175;
-    color: #524e4e; 
+    color: #524e4e;
   `
   export const GenresItem = styled.li`
    
     margin-right: 10px;
+    
+    :not(:last-child)&::after {
+    content: '';
+    /* position: absolute;
+    top: 3px;
+    right: -10px; */
+    margin-left: 8px;
+    width: 1px;
+    height: 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2)}
      
   `
 
