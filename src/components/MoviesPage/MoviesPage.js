@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
 import PropTypes from 'prop-types';
@@ -9,8 +10,9 @@ import SpinnerLoader from '../Loader';
 import { fetchMovieSearch } from '../../services/movies-api'
 
 export default function MoviesPage() {
-  const searchWord = localStorage.getItem('query');
-  const [searchName, setSearchName] = useState(searchWord ? searchWord : '');
+  //const searchWord = localStorage.getItem('query');
+  const location = useLocation();
+  const [searchName, setSearchName] = useState(null);
   const [movies, setMovies] = useState([]);
   const [status, setStatus] = useState('idle');
   const [spinner, setSpinner] = useState(false);
@@ -48,6 +50,11 @@ export default function MoviesPage() {
       });
 
     }, [searchName])
+  
+  useEffect(() => {
+    const newSearch = new URLSearchParams(location.search).get('query');
+    setSearchName(newSearch)
+  },[location])
 
     if (status === 'idle') {
         return (

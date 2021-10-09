@@ -7,7 +7,7 @@ export default function HomePage() {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        localStorage.setItem('query', '');
+       // localStorage.setItem('query', '');
         fetchPopularMovies()
             .then((data) => {
                 setMovies(data.results);
