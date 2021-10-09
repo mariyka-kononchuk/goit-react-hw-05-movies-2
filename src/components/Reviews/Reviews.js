@@ -13,7 +13,6 @@ export default function Reviews() {
     useEffect(() => {
         fetchMovieReviews(movieId)
             .then((data) => {
-                console.log("array",data.results)
                 if (data.results.length === 0) {
                    setStatus('rejected'); 
                 } else {

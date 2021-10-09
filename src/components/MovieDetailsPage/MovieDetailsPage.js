@@ -51,7 +51,7 @@ export default function MovieDetailsPage() {
             history.push(location.state.from)
         } else {
             const query = location.state.query;
-            localStorage.setItem('query', JSON.stringify(query));
+            //localStorage.setItem('query', JSON.stringify(query));
             history.push({
                 pathname: '/movies',
                 search: `query=${query}`
@@ -62,7 +62,6 @@ export default function MovieDetailsPage() {
     useEffect(() => {
         fetchMovieDetails( movieId )
             .then((data) => {
-                console.log(data)
                 setMovie(data)
                 setStatus('resolved');
             }
@@ -92,8 +91,6 @@ export default function MovieDetailsPage() {
     }
     
     if (status === 'resolved') {
-         console.log("location", location);
-      
         return (
             <div>
                 <GoBackButton onClick={handleGoBack}>Go back</GoBackButton>

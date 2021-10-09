@@ -1,5 +1,5 @@
 import React, {lazy, Suspense} from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Navigation from '../Navigation';
 import Container from '../Container';
 // import HomeView from '../../views/HomeView';
@@ -34,7 +34,8 @@ export default function App() {
                     </Route>
 
                     <Route >
-                        <NotFoundView />
+                        <Redirect to="/" />
+                        {/* <NotFoundView /> */}
                     </Route>
                     
                 </Switch>

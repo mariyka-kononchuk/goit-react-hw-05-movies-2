@@ -13,7 +13,6 @@ export default function Cast() {
     useEffect(() => {
         fetchMovieCast(movieId)
             .then((data) => {
-                console.log(data.cast)
                 setActors(data.cast)
                 setStatus('resolved');
             }
